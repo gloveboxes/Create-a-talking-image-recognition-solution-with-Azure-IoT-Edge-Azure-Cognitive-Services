@@ -126,7 +126,33 @@ Be sure to review the full [Install the Azure IoT Edge runtime on Debian-based L
     sudo apt-get -y install iotedge
     ```
 
-3. Reboot the Raspberry Pi
+---
+
+## Configure the Azure IoT Edge device
+
+You need to configure the Azure IoT Edge connection string.
+
+1. Open the Azure IoT Edge config file.
+
+    ```bash
+    sudo nano /etc/iotedge/config.yaml
+    ```
+
+2. Scroll down to the Manual provisioning configuration section.
+
+    ```yaml
+    # Manual provisioning configuration
+    provisioning:
+        source: "manual"
+        device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+    ```
+
+3. Update the **device_connection_string** property with the Azure IoT Edge Connection string you saved to Notepad.
+
+4. Press <kbd>ctrl + X</kbd>, the **Y** to confirm you wish to save the config.
+5. Press <kbd>Enter</kbd> to confirm the file name
+
+6. Reboot the Raspberry Pi
 
     ```bash
     sudo reboot
