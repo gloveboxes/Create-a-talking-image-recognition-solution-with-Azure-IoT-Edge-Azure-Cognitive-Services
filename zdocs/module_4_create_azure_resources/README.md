@@ -34,6 +34,15 @@ Click the **Deploy to Azure** button to deploy Azure resources. An IoT Hub will 
 
     ![](../resources/azure-iot-resources.png)
 
+5. Click on the IoT Hub resource created to open it.
+6. From the IoT Hub blade, select **IoT Edge** from the IoT Hub blade sidebar menu
+7. Click **+ New**
+8. In the **Device ID** dialogue box, name your device **rpi-edge-device**.
+9. Click **Save**. This will create the device.
+10. Click on the newly create IoT Edge device
+11. Click the **Copy** icon to the right of the **Primary Connection String** field and save to Notepad or a text edit on your Operating System as you will need this connection string when configuring your Iot Edge device.
+    ![](../resources/iot-edge-device-connaction-string.png)
+
 ---
 
 ## Creating the Fruit Classification Model
