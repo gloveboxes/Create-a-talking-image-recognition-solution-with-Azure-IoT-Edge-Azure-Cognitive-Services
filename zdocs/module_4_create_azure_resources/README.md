@@ -52,6 +52,6 @@ Open the deployment.template.json file and update the BingKey with the key you c
 
 ---
 
-**[NEXT](../Lab_4_Control_Device_with_Direct_Methods/README.md)**
+**[NEXT](../module_5_building_the_solution/README.md)**
 
 ---
