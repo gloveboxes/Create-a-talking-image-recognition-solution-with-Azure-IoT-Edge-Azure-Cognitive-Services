@@ -127,6 +127,6 @@ Now that you have start the Visual Studio Code Remote SSH Development you need t
 
 ---
 
-**[NEXT](.../module_4_create_azure_resources/README.md)**
+**[NEXT](../module_4_create_azure_resources/README.md)**
 
 ---
