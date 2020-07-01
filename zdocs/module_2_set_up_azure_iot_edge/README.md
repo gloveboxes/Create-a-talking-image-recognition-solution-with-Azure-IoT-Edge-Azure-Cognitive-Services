@@ -13,7 +13,7 @@
 As we will be building Docker images on the Raspberry Pi 4 so I would recommend a fast SD Card or a high speed USB3 Flash or SSD drive.
 
 * I use a Samsung [USB 3.1 Flash Drive FIT Plus 128GB](https://www.samsung.com/us/computing/memory-storage/usb-flash-drives/usb-3-1-flash-drive-fit-plus-128gb-muf-128ab-am/) or USB3 SSD drive. See the [5 of the Fastest and Best USB 3.0 Flash Drives](https://www.makeuseof.com/tag/5-of-the-fastest-usb-3-0-flash-drives-you-should-buy/)
-* For instruction on booting from USB3 see [How to Boot Raspberry Pi 4 From a USB SSD or Flash Drive](https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb). Note, at the time of writing set the *FIRMWARE_RELEASE_STATUS* to *stable* rather than *beta*.
+* For instruction on booting from USB3 see [How to Boot Raspberry Pi 4 From a USB SSD or Flash Drive](https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb). Note, at the time of writing, set the *FIRMWARE_RELEASE_STATUS* to *stable* rather than *beta*.
 
 ---
 
@@ -43,7 +43,7 @@ I recommend using Raspberry Pi OS Lite as it takes less resources than the full 
 3. Update and reboot
 
     ```bash
-    sudo apt update && sudo apt full-upgrade && sudo apt reboot
+    sudo apt update && sudo apt full-upgrade && sudo reboot
     ```
 
 4. Optionally overclock the Raspberry Pi 4.
@@ -101,15 +101,21 @@ When you are developing an Azure Iot Edge module it is faster to install a local
 
 ## Install Azure IoT Edge on the Raspberry Pi
 
-From the SSH session, run the following commands:
+Be sure to review the full [Install the Azure IoT Edge runtime on Debian-based Linux systems](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) guide.
 
-1. Install the *libssl1.0.2* library required by Azure IoT Edge.
+1. Log into your Raspberry Pi
+
+    ```bash
+    ssh pi@raspberrypi.local
+    ```
+
+2. Install the *libssl1.0.2* library required by Azure IoT Edge.
 
     ```bash
     sudo apt-get install libssl1.0.2
     ```
 
-2. Copy the following bash command block, and paste into the SSH session to install Azure IoT Edge. Press <kbd>Enter</kbd> to start the installation process.
+3. Copy the following bash command block, and paste into the SSH session to install Azure IoT Edge. Press <kbd>Enter</kbd> to start the installation process.
 
     ```bash
     curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list && \
@@ -139,7 +145,7 @@ From the SSH session, run the following commands:
 2. From the SSH session, install the git client.
 
     ```bash
-    sudo apt install git
+    sudo apt install -y git
     ```
 
 3. From the SSH session, clone the solution repository to the Raspberry Pi

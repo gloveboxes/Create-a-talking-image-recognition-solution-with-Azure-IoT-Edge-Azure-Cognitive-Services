@@ -3,16 +3,41 @@
 This solution will use three services
 
 1. [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/)
-1. [Azure Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
-2. [Azure Speech Services](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/)
+2. [Azure Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
+3. [Azure Speech Services](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/)
 
-## Azure Subscription
+---
+## Create an Azure Subscription
 
-If you don't already have an Azure account then sign up for a [free Azure account](https://azure.microsoft.com/en-au/free/?WT.mc_id=devto-blog-dglover). If you are a student then sign up for an [Azure for Students](https://azure.microsoft.com/en-au/free/students/?WT.mc_id=devto-blog-dglover) account, no credit card required.
+If you do not have an Azure Subscription then [create an Azure Subscription](https://azure.microsoft.com/en-us/free/). Students can sign up for a free [Azure for Students](https://azure.microsoft.com/en-us/free/students/) subscription that does not require credit card verification.
 
-## Create an Azure IoT Hub Service
+---
 
-[Follow these instructions](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal/?WT.mc_id=devto-blog-dglover) to create an Azure IoT Hub, and an Azure IoT Edge device.
+## Prepare Azure resources
+
+You can prepare Azure cloud resources with the Azure CLI, the Azure Portal Web interface, or deployment templates. For this module, we will be using an Azure deployment template.
+
+Click the **Deploy to Azure** button to deploy Azure resources. An IoT Hub will be created, along with an IoT Edge Device.
+
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://github.com/gloveboxes/Rpi.Rover.NET.Core.IoT.Hub/tree/master/setup)
+
+1. Select or create a new resource group, choose the site located closest to you, and select the IoT Hub Tier. The default IoT Hub tier is the free **F1** tier. You can only have one free IoT Hub per subscription. If you already have a free IoT Hub then either select S1 ([pricing](https://azure.microsoft.com/en-us/pricing/details/iot-hub/)) or delete your existing free IoT Hub before proceeding.
+
+    ![](../resources/azure-deployment-settings.png)
+
+2. Click **Next**.
+3. Click **Deploy**. The deployment will take three to four minutes to complete.
+
+    ![](../resources/azure-deployment-completed.png)
+
+4. When the deployment has completed, click on **Manage your resources**. You will see two services listed in the Azure Web Portal. The Device Provisioning Service (DPS) and the IoT Hub. Appended to the resource names is a random string to ensure the names are globally unique.
+
+    ![](../resources/azure-iot-resources.png)
+
+5. **DO NOT** close the Azure Web Portal and you will be needing it shortly.
+
+
+---
 
 ## Creating the Fruit Classification Model
 

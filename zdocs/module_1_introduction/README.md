@@ -64,19 +64,6 @@ The main components for an IoT Edge solution are:-
 
 So, with that overview of Azure IoT Edge here were my considerations and constraints for the solution.
 
-1. The solution should scale from a Raspberry Pi (running Raspbian Linux) on ARM32v7, to my desktop development environment, to an industrial capable IoT Edge device such as those found in the [Certified IoT Edge Catalog](https://catalog.azureiotsolutions.com/).
+1. The solution should scale from a Raspberry Pi (running Raspberry Pi OS Linux) on ARM32v7, to my Linux desktop development environment, to an industrial capable IoT Edge device such as those found in the [Certified IoT Edge Catalog](https://catalog.azureiotsolutions.com/).
 
 2. The solution needs camera input, I used a USB Webcam for image capture as it was supported across all target devices.
-
-3. The camera capture module needed Docker USB device pass-through (not supported by Docker on Windows) so that plus targeting Raspberry Pi meant that I need to target Azure IoT Edge on Linux.
-
-4. I wanted my developer experience to mirror the devices I was targeting plus I needed Docker support for the USB webcam, so I developed the solution on my Ubuntu 18.04 developer desktop. See my [Ubuntu for Azure Developers](https://gloveboxes.github.io/Ubuntu-for-Azure-Developers/) guide.
-
-    As a workaround, if your development device is locked to Windows then use Ubuntu in Virtual Box which allows USB device pass-through which you can then pass-through to Docker in the Virtual Machine. A bit convoluted but it does work.
-
-
-
-
-
-
- 

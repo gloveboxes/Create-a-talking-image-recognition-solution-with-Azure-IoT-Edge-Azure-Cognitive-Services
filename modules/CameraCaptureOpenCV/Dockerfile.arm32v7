@@ -1,8 +1,5 @@
 FROM balenalib/raspberrypi3:stretch
 
-# Enable cross building of ARM on x64 hardware, Remove this and the cross-build-end if building on ARM hardware.
-RUN [ "cross-build-start" ]
-
 # Install dependencies
 RUN apt-get update &&  apt-get install -y --no-install-recommends  \ 
     libatlas3-base libsz2 libharfbuzz0b libtiff5 libjasper1 libilmbase12 \
@@ -30,7 +27,5 @@ COPY /app/*.py ./
 ENV PYTHONUNBUFFERED=1
 
 EXPOSE 5678
-
-RUN [ "cross-build-end" ]
 
 ENTRYPOINT [ "python3", "iotedge_camera.py" ]

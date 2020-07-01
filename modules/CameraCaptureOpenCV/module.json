@@ -2,7 +2,7 @@
   "$schema-version": "0.0.1",
   "description": "",
   "image": {
-    "repository": "glovebox/camera-capture-opencv",
+    "repository": "localhost:5000/camera-capture-opencv",
     "tag": {
       "version": "1.1.128",
       "platforms": {

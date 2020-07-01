@@ -8,7 +8,7 @@ Setting up a public/private key pair for [SSH](https://en.wikipedia.org/wiki/Sec
 
 The Raspberry Pi SSH Authentication utility will prompt you for:
 
-- The Raspberry Pi Network IP Address,
+- The Raspberry Pi Network IP Address. Run ```hostname -I | cut -d" " -f 1``` on your Raspberry Pi to display its IP address.
 - The Raspberry Pi login name and password. The Raspberry Pi **default** login name is **pi**, and the default password is **raspberry**.
 
 ### Set up SSH for Windows Users
@@ -77,12 +77,36 @@ Visual Studio Code is a code editor and is one of the most popular **Open Source
 
 ## Install VS Code Extensions
 
-Click on the links to install the following Visual Studio Code extensions
+The following Visual Studio Code Extensions are required.
 
-1. [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-2. [Docker for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-3. [Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
-4. [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
+[Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+[Docker for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+[Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
+[Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
 
-Ensure when you are installing the Python and Docker extensions you are installing into SSH. The following is an example of adding the Python extension into the SSH session.
+To install the required Visual Studio Code Extensions, follow these instructions:
 
+1. From Visual Studio Code menu, click **View**, then **Extensions**.
+2. Type **Python extension for Visual Studio Code**.
+3. Click **Install in SSH: pylab-pi**.
+4. Repeat this process for the remaining required extensions. Be sure to **Install in SSH: pylab-pi**.
+    * Docker for Visual Studio Code
+    * Azure Account
+    * Azure IoT Tools
+5. You will be prompted to **Reload**. Click on **Reload Required**.
+
+---
+
+## Open the Azure IoT Edge solution on the Raspberry Pi
+
+Now that you have start the Visual Studio Code Remote SSH Development you need to open the **Create-a-talking-image-recognition-solution-with-Azure-IoT-Edge-Azure-Cognitive-Services** you cloned to the Raspberry Pi.
+
+1. From the Visual Studio Code menu, click **File**, then **Open Folder**.
+
+    This will open the file system on the Raspberry Pi.
+
+2. Select the *Create-a-talking-image-recognition-solution-with-Azure-IoT-Edge-Azure-Cognitive-Services* directory.
+
+    ![](../resources/vs-code-open-solution.png)
+
+3. Click **OK**.

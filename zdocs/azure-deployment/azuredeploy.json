@@ -1,0 +1,49 @@
+// https://docs.microsoft.com/en-us/azure/iot-dps/quick-setup-auto-provision-rm
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "siteLocation": {
+            "type": "string",
+            "defaultValue": "East US",
+            "metadata": {
+                "description": "Select your preferred location"
+            }
+        },
+        "iotHubTier": {
+            "type": "string",
+            "allowedValues": [
+                "F1",
+                "S1"
+            ],
+            "defaultValue": "F1",
+            "metadata": {
+                "description": "The IoT Hub SKU."
+            }
+        }
+    },
+    "variables": {
+        "UniqueStringPrefix": "[uniqueString( resourceGroup().id, deployment().name )]",
+        "iotHubName": "[concat('IOT-HUB-', variables('UniqueStringPrefix'))]",
+        "location": "[parameters('siteLocation')]",
+        "iotHubResourceId": "[resourceId('Microsoft.Devices/Iothubs', variables('iotHubName'))]",
+        "iotHubKeyName": "iothubowner",
+        "iotHubKeyResource": "[resourceId('Microsoft.Devices/Iothubs/Iothubkeys', variables('iotHubName'), variables('iotHubKeyName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Devices/IotHubs",
+            "apiVersion": "2019-11-04",
+            "name": "[variables('iotHubName')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "[parameters('ioTHubTier')]",
+                "capacity": 1
+            },
+            "properties": {
+                "features": "None"
+            }
+        }
+    ]
+}
