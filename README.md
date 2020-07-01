@@ -95,5 +95,5 @@ So, with that overview of Azure IoT Edge here were my considerations and constra
 * Module 1: [Create an Azure IoT Hub](zdocs/module_1_create_iot_hub/README.md)
 * Module 2: [Install Azure IoT Edge on your Raspberry Pi](zdocs/module_2_install_azure_iot_edge/README.md)
 * Module 3: [Set up your development environment](zdocs/module_3_set_up_computer/README.md)
-* LModuleab 4: [Create Azure Cognitive Services](zdocs/module_4_create_azure_resources/README.md)
+* Module 4: [Create Azure Cognitive Services](zdocs/module_4_create_azure_resources/README.md)
 * Module 5: [Build and deploy the solution](zdocs/module_5_building_the_solution/README.md)
