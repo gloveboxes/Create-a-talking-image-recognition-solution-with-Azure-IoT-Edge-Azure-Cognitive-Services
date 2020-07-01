@@ -49,3 +49,9 @@ Click the **Deploy to Azure** button to deploy Azure resources. An IoT Hub will 
 10. Click on the newly create IoT Edge device
 11. Click the **Copy** icon to the right of the **Primary Connection String** field and save to Notepad or a text edit on your Operating System as you will need this connection string when configuring your Iot Edge device.
     ![](../resources/iot-edge-device-connaction-string.png)
+
+---
+
+**[NEXT](../module_2_install_azure_iot_edge/README.md)**
+
+---

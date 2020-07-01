@@ -49,3 +49,9 @@ Follow these steps to export your Custom Vision project model.
 Open the deployment.template.json file and update the BingKey with the key you copied from the Azure Speech service.
 
 ![speech key](../resources/speech-key.png)
+
+---
+
+**[NEXT](../Lab_4_Control_Device_with_Direct_Methods/README.md)**
+
+---

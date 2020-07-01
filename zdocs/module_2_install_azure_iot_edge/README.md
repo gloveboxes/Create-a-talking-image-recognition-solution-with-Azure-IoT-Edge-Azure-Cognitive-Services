@@ -194,3 +194,6 @@ You need to configure the Azure IoT Edge connection string.
 
 ---
 
+**[NEXT](../module_3_set_up_computer/README.md)**
+
+---

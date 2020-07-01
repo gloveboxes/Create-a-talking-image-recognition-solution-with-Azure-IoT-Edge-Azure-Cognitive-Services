@@ -124,3 +124,9 @@ Now that you have start the Visual Studio Code Remote SSH Development you need t
     ![](../resources/vs-code-open-solution.png)
 
 3. Click **OK**.
+
+---
+
+**[NEXT](.../module_4_create_azure_resources/README.md)**
+
+---
