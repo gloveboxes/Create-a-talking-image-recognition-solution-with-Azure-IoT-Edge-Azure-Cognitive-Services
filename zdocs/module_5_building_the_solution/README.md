@@ -93,5 +93,6 @@ You can monitor the state of the Azure IoT Edge module from the Azure IoT Hub bl
 
 ---
 
-**[NEXT](../Lab_4_Control_Device_with_Direct_Methods/README.md../module_5_building_the_solution/README.md
+**[Home](../../README.md)**
+
 ---
