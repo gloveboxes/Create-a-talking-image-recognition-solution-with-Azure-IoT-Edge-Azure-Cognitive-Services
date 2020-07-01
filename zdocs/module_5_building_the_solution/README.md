@@ -29,13 +29,36 @@ You need to ensure the image you plan to build matches the target processor arch
 
     ![docker build and push](../resources/solution-build-push-docker.png)
 
-## <a name='DeployingtheSolution'></a>Deploying the Solution
+## Deploying the Solution
 
 When the Docker Build and Push process has completed select the Azure IoT Hub device you want to deploy the solution to. Right mouse click the deployment.json file found in the config folder and select the target device from the drop-down list.
 
    ![deploy to device](../resources/deploy-to-device.png)
 
-## <a name='MonitoringtheSolutionontheIoTEdgeDevice'></a>Monitoring the Solution on the IoT Edge Device
+## View the device telemetry from the Azure Cloud Shell
+
+1. You will need to know the name of the Azure IoT Hub you created. You can get the name from the Azure web portal.
+    ![](resources/azure-iot-resources.png)
+2. Open the Azure Cloud shell at [https://shell.azure.com](https://shell.azure.com).
+3. In the Cloud Shell, run the [az extension add](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az-extension-add) command to add the Microsoft Azure IoT Extension to your CLI shell. The IoT Extension adds IoT Hub, IoT Edge, and IoT Device Provisioning Service (DPS) specific commands to Azure CLI.
+
+    ```bash
+    az extension add --name azure-iot
+    ```
+
+4. Start the IoT Hub Events Monitor with the following command. Be sure to use your IoT Hub name.
+
+    ```bash
+    az iot hub monitor-events --hub-name {your IoT Hub name}
+    ```
+
+5. Observe telemetry in the cloud. The output will be similar to the following screen.
+
+    ![](resources/iot-hub-monitor-events.png)
+
+6. Use <kbd>ctrl+c</kbd> to stop the event monitor.
+
+## Monitoring the Solution on the IoT Edge Device
 
 Once the solution has been deployed you can monitor it on the IoT Edge device itself using the ```iotedge list``` command.
 

@@ -26,10 +26,7 @@
     "variables": {
         "UniqueStringPrefix": "[uniqueString( resourceGroup().id, deployment().name )]",
         "iotHubName": "[concat('IOT-HUB-', variables('UniqueStringPrefix'))]",
-        "location": "[parameters('siteLocation')]",
-        "iotHubResourceId": "[resourceId('Microsoft.Devices/Iothubs', variables('iotHubName'))]",
-        "iotHubKeyName": "iothubowner",
-        "iotHubKeyResource": "[resourceId('Microsoft.Devices/Iothubs/Iothubkeys', variables('iotHubName'), variables('iotHubKeyName'))]"
+        "location": "[parameters('siteLocation')]"
     },
     "resources": [
         {
