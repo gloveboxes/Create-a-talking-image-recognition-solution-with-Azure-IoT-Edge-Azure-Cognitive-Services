@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "C:\\Users\\dglover\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "azure-iot-edge.defaultPlatform": {
+        "platform": "arm32v7",
+        "alias": null
+    }
+}
