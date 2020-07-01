@@ -149,7 +149,7 @@ You need to configure the Azure IoT Edge connection string.
 
 3. Update the **device_connection_string** property with the Azure IoT Edge Connection string you saved to Notepad.
 
-4. Press <kbd>ctrl + X</kbd>, the **Y** to confirm you wish to save the config.
+4. Press <kbd>ctrl + X</kbd>, then **y** to confirm you wish to save the config.
 5. Press <kbd>Enter</kbd> to confirm the file name
 
 6. Reboot the Raspberry Pi
