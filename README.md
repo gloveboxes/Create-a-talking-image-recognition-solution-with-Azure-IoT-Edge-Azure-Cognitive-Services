@@ -20,7 +20,14 @@ There are lots of applications for image recognition but what I had in mind when
 
 ---
 
-## Solution Overview
+## Solution Architecture
+
+This solution will use three services, each with free tier services to whet your appetite.
+
+1. [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/)
+2. [Azure Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/)
+3. [Azure Speech Services](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/)
+
 
 ![IoT Edge Solution Architecture](zdocs/resources/Architecture.jpg)
 
@@ -79,3 +86,15 @@ So, with that overview of Azure IoT Edge here were my considerations and constra
 1. The solution should scale from a Raspberry Pi (running Raspberry Pi OS Linux) on ARM32v7, to my Linux desktop development environment, to an industrial capable IoT Edge device such as those found in the [Certified IoT Edge Catalog](https://catalog.azureiotsolutions.com/).
 
 2. The solution needs camera input, I used a USB Webcam for image capture as it was supported across all target devices.
+
+---
+
+## Let's get started
+
+<!-- [Home](../../README.md) -->
+
+* Lab 1: [Create an Azure IoT Hub](zdocs/module_1_create_iot_hub/README.md)
+* Lab 2: [Install Azure IoT Edge on your Raspberry Pi](zdocs/module_2_install_azure_iot_edge/README.md)
+* Lab 3: [Set up your development environment](zdocs/module_3_set_up_computer/README.md)
+* Lab 4: [Create Azure Cognitive Services](zdocs/module_4_create_azure_resources/README.md)
+* Lab 5: [Build and deploy the solution](zdocs/module_5_building_the_solution/README.md)

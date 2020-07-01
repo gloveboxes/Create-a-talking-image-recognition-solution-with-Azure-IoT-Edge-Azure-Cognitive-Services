@@ -1,4 +1,18 @@
-# Set up your computer development environment
+# Set up your development environment
+
+---
+
+## Index
+
+* Lab 1: [Create an Azure IoT Hub](../module_1_create_iot_hub/README.md)
+* Lab 2: [Install Azure IoT Edge on your Raspberry Pi](../module_2_install_azure_iot_edge/README.md)
+* Lab 3: [Set up your development environment](../module_3_set_up_computer/README.md)
+* Lab 4: [Create Azure Cognitive Services](../module_4_create_azure_resources/README.md)
+* Lab 5: [Build and deploy the solution](../module_5_building_the_solution/README.md)
+
+* [Home](../../README.md)
+
+---
 
 ## Set up SSH Authentication between your computer and Raspberry Pi
 
