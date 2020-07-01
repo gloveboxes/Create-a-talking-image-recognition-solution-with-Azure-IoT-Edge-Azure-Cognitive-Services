@@ -1,4 +1,4 @@
-# Azure Services
+# Creating required Azure Services
 
 This solution will use three services
 
@@ -17,9 +17,9 @@ If you do not have an Azure Subscription then [create an Azure Subscription](htt
 
 You can prepare Azure cloud resources with the Azure CLI, the Azure Portal Web interface, or deployment templates. For this module, we will be using an Azure deployment template.
 
-Click the **Deploy to Azure** button to deploy Azure resources. An IoT Hub will be created, along with an IoT Edge Device.
+Click the **Deploy to Azure** button to deploy Azure resources. An IoT Hub will be created.
 
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://github.com/gloveboxes/Rpi.Rover.NET.Core.IoT.Hub/tree/master/setup)
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/gloveboxes/Create-a-talking-image-recognition-solution-with-Azure-IoT-Edge-Azure-Cognitive-Services/tree/master/zdocs/azure-deployment)
 
 1. Select or create a new resource group, choose the site located closest to you, and select the IoT Hub Tier. The default IoT Hub tier is the free **F1** tier. You can only have one free IoT Hub per subscription. If you already have a free IoT Hub then either select S1 ([pricing](https://azure.microsoft.com/en-us/pricing/details/iot-hub/)) or delete your existing free IoT Hub before proceeding.
 
@@ -30,12 +30,9 @@ Click the **Deploy to Azure** button to deploy Azure resources. An IoT Hub will 
 
     ![](../resources/azure-deployment-completed.png)
 
-4. When the deployment has completed, click on **Manage your resources**. You will see two services listed in the Azure Web Portal. The Device Provisioning Service (DPS) and the IoT Hub. Appended to the resource names is a random string to ensure the names are globally unique.
+4. When the deployment has completed, click on **Manage your resources**. You will see the IoT Hub listed in the Azure Web Portal.
 
     ![](../resources/azure-iot-resources.png)
-
-5. **DO NOT** close the Azure Web Portal and you will be needing it shortly.
-
 
 ---
 
