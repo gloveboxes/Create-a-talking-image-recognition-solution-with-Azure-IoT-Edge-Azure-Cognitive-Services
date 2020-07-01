@@ -24,7 +24,7 @@ The following describes the highlighted sections of the project.
 
 3. The deployment.template.json file is used by the build process. It defines what modules to build, what message routes to set up, and what version of the IoT Edge runtime to run.
 
-4. The deployment.json file is generated from the deployment.template.json and is the [Deployment Manifest](https://docs.microsoft.com/en-us/azure/iot-edge/module-composition/?WT.mc_id=devto-blog-dglover)
+4. The deployment.json file is generated from the deployment.template.json and is the [Deployment Manifest](https://docs.microsoft.com/en-us/azure/iot-edge/module-composition/?WT.mc_id=julyot-tir-dglover)
 
 5. The version.py in the project root folder is a helper app you can run on your development machine that updates the version number of each module. Useful as a change in the version number is what triggers Azure IoT Edge runtime to pull the updated module and it is easy to forget to change the module version numbers:)
 
@@ -53,7 +53,7 @@ When the Docker Build and Push process has completed select the Azure IoT Hub de
 1. You will need to know the name of the Azure IoT Hub you created. You can get the name from the Azure web portal.
     ![](resources/azure-iot-resources.png)
 2. Open the Azure Cloud shell at [https://shell.azure.com](https://shell.azure.com).
-3. In the Cloud Shell, run the [az extension add](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az-extension-add) command to add the Microsoft Azure IoT Extension to your CLI shell. The IoT Extension adds IoT Hub, IoT Edge, and IoT Device Provisioning Service (DPS) specific commands to Azure CLI.
+3. In the Cloud Shell, run the [az extension add](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest&WT.mc_id=julyot-tir-dglover) command to add the Microsoft Azure IoT Extension to your CLI shell. The IoT Extension adds IoT Hub, IoT Edge, and IoT Device Provisioning Service (DPS) specific commands to Azure CLI.
 
     ```bash
     az extension add --name azure-iot
@@ -81,7 +81,7 @@ iotedge list
 
   ![watch iotedge list](../resources/iotedge-list.png)
 
-## <a name='MonitoringtheSolutionfromtheAzureIoTEdgeBlade'></a>Monitoring the Solution from the Azure IoT Edge Blade
+## Monitoring the Solution from the Azure IoT Edge Blade
 
 You can monitor the state of the Azure IoT Edge module from the Azure IoT Hub blade on the [Azure Portal](http://portal.azure.com).
 

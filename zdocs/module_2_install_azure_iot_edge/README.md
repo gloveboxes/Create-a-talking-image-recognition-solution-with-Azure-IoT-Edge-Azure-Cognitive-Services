@@ -92,7 +92,7 @@ I recommend using Raspberry Pi OS Lite as it takes less resources than the full 
 
 ## Install the Docker Registry on the Raspberry Pi
 
-Azure IoT Edge relies on Docker images being distributed from a [Docker Registry](https://docs.docker.com/registry/). In production you would deploy Docker images from a registry such as [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/).
+Azure IoT Edge relies on Docker images being distributed from a [Docker Registry](https://docs.docker.com/registry/). In production you would deploy Docker images from a registry such as [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/?WT.mc_id=julyot-tir-dglover).
 
 When you are developing an Azure Iot Edge module it is faster to install a local container registry on the Raspberry Pi and deploy Docker images from the local registry to Azure IoT Edge.
 
@@ -113,7 +113,7 @@ When you are developing an Azure Iot Edge module it is faster to install a local
 
 ## Install Azure IoT Edge on the Raspberry Pi
 
-Be sure to review the full [Install the Azure IoT Edge runtime on Debian-based Linux systems](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) guide.
+Be sure to review the full [Install the Azure IoT Edge runtime on Debian-based Linux systems](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux?WT.mc_id=julyot-tir-dglover) guide.
 
 1. Log into your Raspberry Pi
 

@@ -64,7 +64,7 @@ The SSH utility guides you through the process of setting up a secure SSH channe
 
 Visual Studio Code is a code editor and is one of the most popular **Open Source** projects on [GitHub](https://github.com/microsoft/vscode). It runs on Linux, macOS, and Windows.
 
-1. Install Visual Studio Code from [here](https://code.visualstudio.com/).
+1. Install Visual Studio Code from [here](https://code.visualstudio.com/?WT.mc_id=julyot-tir-dglover).
 
 ---
 
@@ -93,10 +93,10 @@ Visual Studio Code is a code editor and is one of the most popular **Open Source
 
 The following Visual Studio Code Extensions are required.
 
-[Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-[Docker for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-[Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)
-[Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
+[Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python&WT.mc_id=julyot-tir-dglover)
+[Docker for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker&WT.mc_id=julyot-tir-dglover)
+[Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account&WT.mc_id=julyot-tir-dglover)
+[Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools&WT.mc_id=julyot-tir-dglover)
 
 To install the required Visual Studio Code Extensions, follow these instructions:
 
