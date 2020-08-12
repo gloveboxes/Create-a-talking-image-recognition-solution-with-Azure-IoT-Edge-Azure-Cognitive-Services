@@ -6,13 +6,14 @@ RUN apt-get update &&  apt-get install -y --no-install-recommends  \
     libopenexr22 libilmbase12 libgstreamer1.0-0 libavcodec57 libavformat57 \
     libavutil55 libswscale4 libqtgui4 libqt4-test libqtcore4 \
     libboost-python-dev python3-pip git wget \
-    python3-numpy build-essential libhdf5-100 portaudio19-dev   \
+    python3-numpy build-essential libhdf5-100 libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev \
+    #portaudio19-dev   \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -y autoremove
 
 RUN export PIP_DEFAULT_TIMEOUT=100 
 RUN pip3 install --upgrade setuptools && pip3 install --upgrade pip 
-RUN pip3 install azure-iothub-device-client opencv-contrib-python requests ptvsd requests pyaudio wave 
+RUN pip3 install azure-iothub-device-client opencv-contrib-python requests ptvsd requests pyaudio wave pygame
 
 # Raspberry Kernel 4.19 Sound Issues - Stretch and Buster
 # Kernel 4.19 Sound & latest updates... https://www.raspberrypi.org/forums/viewtopic.php?t=241814
