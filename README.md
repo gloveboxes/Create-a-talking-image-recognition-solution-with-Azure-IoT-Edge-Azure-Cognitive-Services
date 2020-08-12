@@ -97,3 +97,4 @@ So, with that overview of Azure IoT Edge here were my considerations and constra
 * Module 3: [Set up your development environment](zdocs/module_3_set_up_computer/README.md)
 * Module 4: [Create Azure Cognitive Services](zdocs/module_4_create_azure_resources/README.md)
 * Module 5: [Build and deploy the solution](zdocs/module_5_building_the_solution/README.md)
+* Module 6: [Build and deploy the solution](zdocs/module_6_camera_settings/README.md)

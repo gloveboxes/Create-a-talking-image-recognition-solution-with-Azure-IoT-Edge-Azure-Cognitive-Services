@@ -9,6 +9,7 @@
 * Module 3: [Set up your development environment](../module_3_set_up_computer/README.md)
 * Module 4: [Create Azure Cognitive Services](../module_4_create_azure_resources/README.md)
 * Module 5: [Build and deploy the solution](../module_5_building_the_solution/README.md)
+* Module 6: [Build and deploy the solution](../module_6_camera_settings/README.md)
 
 * [Home](../../README.md)
 
