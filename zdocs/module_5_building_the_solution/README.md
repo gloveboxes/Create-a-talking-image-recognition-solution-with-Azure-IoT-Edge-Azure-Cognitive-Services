@@ -94,6 +94,6 @@ You can monitor the state of the Azure IoT Edge module from the Azure IoT Hub bl
 
 ---
 
-**[NEXT](../module_5_camera_settings/README.md)**
+**[NEXT](../module_6_camera_settings/README.md)**
 
 ---
