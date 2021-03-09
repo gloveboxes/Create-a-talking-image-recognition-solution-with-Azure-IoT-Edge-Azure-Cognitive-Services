@@ -48,7 +48,7 @@ This project depends on ARM64 support and the recommended platform is Ubuntu Ser
 
     Though not a requirement, the machine learning inference times will be improved by overclocking the Raspberry Pi 4. You will need a Raspberry Pi heat sink if you overclock. See the [How to overclock Raspberry Pi 4](https://magpi.raspberrypi.org/articles/how-to-overclock-raspberry-pi-4) article for more information. 
 
-    I use the following settings in the ```/boot/config.txt```.
+    I use the following settings in the ```/boot/firware/config.txt```.
 
     ```text
     over_voltage=6
