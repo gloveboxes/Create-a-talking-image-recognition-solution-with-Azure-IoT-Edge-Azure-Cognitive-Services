@@ -23,6 +23,12 @@ The settings you choose will depend on your camera.
 
 But for reference these are the settings I use.
 
+You will need to install 
+
+```bash
+sudo apt-get install v4l-utils
+```
+
 Note, **power_line_frequency=1** is 50Hz.
 
 ```bash
@@ -41,6 +47,14 @@ These settings are reset on reboot so you will need to reload at bootup.
 
 The easist way to do this is add the required camera settings to the /etc/rc.local file.
 
+### USB camera quirk settings
+
+If you experience frame timeouts from your USB camera then the following may help.
+
+```bash
+sudo rmmod uvcvideo
+sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80
+```
 
 ---
 

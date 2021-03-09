@@ -34,32 +34,17 @@ As we will be building Docker images on the Raspberry Pi 4 so I would recommend 
 
 ### Create the Raspberry Pi OS Image
 
-I recommend using Raspberry Pi OS Lite as it takes less resources than the full Raspberry Pi Desktop version. If you've not set up a Raspberry Pi before then this is a great guide. "[Setting up a Headless Pi](https://learn.pimoroni.com/tutorial/sandyj/setting-up-a-headless-pi)". Be sure to use the WiFi network as your development computer.
-
-
+This project depends on ARM64 support and the recommended platform is Ubuntu Server 20.04 or 20.10 for Raspberry Pi. See [How to install Ubuntu Server on your Raspberry Pi](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview).
 
 ### Start Raspberry Pi and update
 
-1. Insert SD Card or USB3 drive, and power on your Raspberry Pi.
-2. Log into the Raspberry Pi over your network
-
-    ```bash
-    ssh pi@raspberrypi.local
-    ```
-
-    or depending on your network settings try
-
-    ```bash
-    ssh pi@raspberrypi
-    ```
-
-3. Update and reboot
+1. Update and reboot
 
     ```bash
     sudo apt update && sudo apt full-upgrade && sudo reboot
     ```
 
-4. Optionally overclock the Raspberry Pi 4.
+2. Optionally overclock the Raspberry Pi 4.
 
     Though not a requirement, the machine learning inference times will be improved by overclocking the Raspberry Pi 4. You will need a Raspberry Pi heat sink if you overclock. See the [How to overclock Raspberry Pi 4](https://magpi.raspberrypi.org/articles/how-to-overclock-raspberry-pi-4) article for more information. 
 
@@ -75,71 +60,10 @@ I recommend using Raspberry Pi OS Lite as it takes less resources than the full 
 
 ---
 
-## Install Docker on the Raspberry Pi
-
-1. Log into your Raspberry Pi
-
-    ```bash
-    ssh pi@raspberrypi.local
-    ```
-
-2. From the SSH session run the following command.
-
-    ```bash
-    curl -sSL get.docker.com | sh && sudo usermod pi -aG docker && sudo reboot
-    ```
-
----
-
-## Install the Docker Registry on the Raspberry Pi
-
-Azure IoT Edge relies on Docker images being distributed from a [Docker Registry](https://docs.docker.com/registry/). In production you would deploy Docker images from a registry such as [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/?WT.mc_id=julyot-tir-dglover).
-
-When you are developing an Azure Iot Edge module it is faster to install a local container registry on the Raspberry Pi and deploy Docker images from the local registry to Azure IoT Edge.
-
-1. Log into your Raspberry Pi
-
-    ```bash
-    ssh pi@raspberrypi.local
-    ```
-
-2. From the SSH session, run the following command.
-
-    ```bash
-    docker run -d -p 5000:5000 --restart=always --name registry registry:2
-    ```
-3. **Do NOT close the SSH session.**
-
----
-
 ## Install Azure IoT Edge on the Raspberry Pi
 
-Be sure to review the full [Install the Azure IoT Edge runtime on Debian-based Linux systems](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux?WT.mc_id=julyot-tir-dglover) guide.
+Follow the steps outlined in the [Install or uninstall Azure IoT Edge for Linux](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux?WT.mc_id=julyot-tir-dglover) guide. Follow the guidance for Ubuntu 18.04.
 
-1. Log into your Raspberry Pi
-
-    ```bash
-    ssh pi@raspberrypi.local
-    ```
-
-2. Install the *libssl1.0.2* library required by Azure IoT Edge.
-
-    ```bash
-    sudo apt-get install libssl1.0.2
-    ```
-
-3. Copy the following bash command block, and paste into the SSH session to install Azure IoT Edge. Press <kbd>Enter</kbd> to start the installation process.
-
-    ```bash
-    curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list && \
-    sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/ && \
-    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && \
-    sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/ && \
-    sudo apt-get update && \
-    sudo apt-get -y install iotedge
-    ```
-
----
 
 ## Configure the Azure IoT Edge device
 
@@ -173,6 +97,24 @@ You need to configure the Azure IoT Edge connection string.
 
 ---
 
+## Install the Docker Registry on the Raspberry Pi
+
+Azure IoT Edge relies on Docker images being distributed from a [Docker Registry](https://docs.docker.com/registry/). In production you would deploy Docker images from a registry such as [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/?WT.mc_id=julyot-tir-dglover).
+
+When you are developing an Azure Iot Edge module it is faster to install a local container registry on the Raspberry Pi and deploy Docker images from the local registry to Azure IoT Edge.
+
+1. Log into your Raspberry Pi
+
+2. From the SSH session, run the following command.
+
+    ```bash
+    docker run -d -p 5000:5000 --restart=always --name registry registry:2
+    ```
+
+3. **Do NOT close the SSH session.**
+
+---
+
 ## Clone the image recognition solution to the Raspberry Pi
 
 1. Log into your Raspberry Pi
@@ -190,7 +132,7 @@ You need to configure the Azure IoT Edge connection string.
 3. From the SSH session, clone the solution repository to the Raspberry Pi
 
     ```bash
-    git clone https://github.com/gloveboxes/Create-a-talking-image-recognition-solution-with-Azure-IoT-Edge-Azure-Cognitive-Services.git
+    git clone --depth 1 https://github.com/gloveboxes/Create-a-talking-image-recognition-solution-with-Azure-IoT-Edge-Azure-Cognitive-Services.git
     ```
 
 ---

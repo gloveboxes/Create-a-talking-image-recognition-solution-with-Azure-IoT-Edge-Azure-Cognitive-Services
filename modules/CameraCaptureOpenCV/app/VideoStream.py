@@ -23,7 +23,7 @@ else:
 class VideoStream(object):
     def __init__(self, path, queueSize=3):
         print('opening camera')
-        self.stream = cv2.VideoCapture(0)
+        self.stream = cv2.VideoCapture(path)
         # self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         # self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         # self.stream.set(cv2.CAP_PROP_SETTINGS, 1 )

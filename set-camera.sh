@@ -4,6 +4,8 @@
 # https://www.kurokesu.com/main/2016/01/16/manual-usb-camera-settings-in-linux/
 # v4l2-ctl -d /dev/video0 --list-ctrls
 
+# sudo apt-get install v4l-utils
+
 v4l2-ctl --set-ctrl=power_line_frequency=1
 v4l2-ctl --set-ctrl=focus_auto=0
 v4l2-ctl --set-ctrl=brightness=150
@@ -26,12 +28,8 @@ v4l2-ctl --set-ctrl=zoom_absolute=20
 #options uvcvideo quirks=0x80
 #To get the module to reload uvcvideo.conf, unload and load the module:
 
-#rmmod uvcvideo
-#modprobe uvcvideo
-
-
-#sudo rmmod uvcvideo
-#sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80
+sudo rmmod uvcvideo
+sudo modprobe uvcvideo nodrop=1 timeout=5000 quirks=0x80
 #modinfo uvcvideo
 
 #v4l2-ctl --set-ctrl=power_line_frequency=1

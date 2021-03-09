@@ -1,43 +1,23 @@
-﻿FROM balenalib/raspberrypi3:stretch
+FROM arm32v7/python:3.7-slim
 
-# Install dependencies
-RUN apt-get update &&  apt-get install -y --no-install-recommends \
-        python3 \
-        python3-pip \
-        build-essential \
-        python3-dev \
-        libopenjp2-7-dev \
-        libtiff5-dev \
-        zlib1g-dev \
-        libjpeg-dev \
-        libatlas-base-dev \
-        libxcb1-dev \
-        && rm -rf /var/lib/apt/lists/* \
-        && apt-get -y autoremove
+RUN apt update && apt install -y libjpeg62-turbo libopenjp2-7 libtiff5 libatlas-base-dev libgl1-mesa-glx
+RUN pip install absl-py six protobuf wrapt gast astor termcolor keras_applications keras_preprocessing --no-deps
+RUN pip install numpy==1.16 tensorflow==1.13.1 --extra-index-url 'https://www.piwheels.org/simple' --no-deps
+RUN pip install flask pillow --index-url 'https://www.piwheels.org/simple'
 
-# Python dependencies
+# By default, we run manual image resizing to maintain parity with CVS webservice prediction results.
+# If parity is not required, you can enable faster image resizing by uncommenting the following lines.
+RUN echo "deb http://security.debian.org/debian-security jessie/updates main" >> /etc/apt/sources.list & apt update -y
+RUN apt install -y  zlib1g-dev libjpeg-dev gcc libglib2.0-bin libsm6 libxext6 libxrender1 libjasper-dev libpng16-16 libopenexr23 libgstreamer1.0-0 libavcodec58 libavformat58 libswscale5 libqtgui4 libqt4-test libqtcore4
+RUN pip install opencv-python --extra-index-url 'https://www.piwheels.org/simple'
 
-# RUN pip3 install --upgrade setuptools && pip3 install --upgrade pip 
-# RUN pip3 install pillow numpy flask tensorflow ptvsd
-
-# Python dependencies
-RUN export PIP_DEFAULT_TIMEOUT=100 
-RUN pip3 install --upgrade pip 
-RUN pip3 install --upgrade setuptools 
-RUN pip3 install pillow --index-url 'https://www.piwheels.org/simple'
-RUN pip3 install numpy
-RUN pip3 install flask
-RUN pip3 install tensorflow
-
-# Add the application
-ADD app /app
+COPY cv-arm32v7/app /app
 
 # Expose the port
 EXPOSE 80
-EXPOSE 5679
 
 # Set the working directory
 WORKDIR /app
 
 # Run the flask server for the endpoints
-CMD ["python3","iotedge_model.py"]
+CMD python -u app.py
